@@ -1,12 +1,14 @@
 # Wav2Lip LipSync Enhancement and Parameter Tuning Guide
 
-This README provides instructions for enhancing LipSync using the Wav2Lip tool and introduces some tips and tricks to achieve better results by tweaking parameters. We have transitioned from the previous LipGAN model to the more advanced Wav2Lip model for improved lip synchronization.
+This README provides step-by-step instructions for enhancing LipSync using the Wav2Lip tool and introduces some tips and tricks to achieve the best results through parameter tuning. We have transitioned from the previous LipGAN model to the more advanced Wav2Lip model for improved lip synchronization.
 
 ## Step 1: Setup Wav2Lip
 
 In this step, we will set up the necessary dependencies and download the pretrained Wav2Lip model.
 
-1. Install the required dependencies and libraries:
+1. **Install Dependencies and Libraries:**
+
+   Run the following commands to set up the environment:
 
    ```python
    !rm -rf /content/sample_data
@@ -18,19 +20,25 @@ In this step, we will set up the necessary dependencies and download the pretrai
    !wget 'https://iiitaphyd-my.sharepoint.com/personal/radrabha_m_research_iiit_ac_in/_layouts/15/download.aspx?share=EdjI7bZlgApMqsVoEUUXpLsBxqXbn5z8VTmoxp55YNDcIA' -O '/content/Wav2Lip/checkpoints/wav2lip_gan.pth'
    ```
 
-2. Install the required Python packages:
+2. **Install Required Python Packages:**
+
+   Install the necessary Python packages with the following command:
 
    ```python
    !cd Wav2Lip && pip install -r requirements.txt
    ```
 
-3. Download the pretrained model for face detection:
+3. **Download the Pretrained Model for Face Detection:**
+
+   Download the face detection model:
 
    ```python
    !wget "https://www.adrianbulat.com/downloads/python-fan/s3fd-619a316812.pth" -O "/content/Wav2Lip/face_detection/detection/sfd/s3fd.pth"
    ```
 
-4. Install additional libraries:
+4. **Install Additional Libraries:**
+
+   Install additional libraries for video processing and audio handling:
 
    ```python
    !pip install -q youtube-dl
@@ -38,9 +46,13 @@ In this step, we will set up the necessary dependencies and download the pretrai
    !pip install librosa==0.9.1
    ```
 
-5. Prepare code for recording audio, if needed. This code allows you to record audio directly in the Colab environment.
+5. **Prepare Code for Recording Audio (Optional):**
 
-6. Clear the output to proceed to the next step:
+   If needed, you can use the provided code to record audio directly within the Colab environment.
+
+6. **Clear the Output:**
+
+   Clear the output to proceed to the next step:
 
    ```python
    from IPython.display import clear_output
@@ -93,7 +105,7 @@ or with no smoothing:
 
 After the synchronization process is complete, a preview of the final video will be displayed, and you can download it from the provided link.
 
-Note:
+**Note**:
 - Ensure that the selected video is not longer than 60 seconds.
 - The tool may resize the video to 720p if the original resolution is higher.
 
